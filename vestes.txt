@@ -1,4 +1,0 @@
-ppomet: XXXL + XXL
-mgallo: XXL	# la semaine pro
-pbenoit	L + XL
-

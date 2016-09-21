@@ -6,14 +6,16 @@
 #    By: fbellott <fbellott@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/09/19 13:36:38 by fbellott          #+#    #+#              #
-#    Updated: 2016/09/20 11:46:37 by fbellott         ###   ########.fr        #
+#    Updated: 2016/09/21 12:32:40 by fbellott         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 MACHINE_NAME='default'
 
 echo "export MACHINE_STORAGE_PATH=/sgoinfre/goinfre/Perso/`whoami`" >> ~/.zshrc
+chmod +x ~/.zshrc
 ~/.zshrc
+chmod 700 /sgoinfre/goinfre/Perso/`whoami`
 docker-machine create --driver virtualbox $MACHINE_NAME
 #cp -r ~/.docker/* /sgoinfre/goinfre/Perso/`whoami`/docker/
 #mv ~/.docker ~/.Trash/docker
