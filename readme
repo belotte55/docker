@@ -1,0 +1,3 @@
+./install_machine.sh		# install the boot2docker machine
+./build_container.sh <name>	# build a container fron the Dockerfile
+./run_container.sh			# copy Web at /Users/Shared and run the container
