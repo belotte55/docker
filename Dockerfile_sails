@@ -2,29 +2,20 @@
 # Dockerfile for Sane-stack to run sails.js API application
 ############################################################
 
-FROM iojs:slim
+FROM node
 
 MAINTAINER Markus Padourek <markus@artificial.io>
 
 RUN apt-get update && \
 	apt-get install -y	git \
+						vim \
+						zsh \
+						sqlite3 \
 						build-essential \
-						libssl-dev \
+						libssl-dev
 
-RUN cd /root/ && curl -sL https://raw.githubusercontent.com/creationix/nvm/v0.31.0/install.sh -o install_nvm.sh
-RUN bash install_nvm.sh
-RUN rm install_nvm.sh
-RUN source ~/.profile
-RUN nvm install 6.6.0
-RUN nvm use 6.6.0
 RUN npm install -g sails grunt bower pm2 npm-check-updates
 RUN echo 'if [ -d /root/Server ]; then cd /root/Server; fi' >> ~/.bashrc
-
-# Define mountable directories.
-#VOLUME ["/server"]
-
-# Define working directory.
-#WORKDIR /server
 
 # Expose ports.
 EXPOSE 1337
